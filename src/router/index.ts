@@ -5,7 +5,7 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/login',
         name: 'Login',
-        component: () => import('../views/login/login.vue')
+        component: () => import('@/views/login/login.vue')
     }
 ]
 const router = createRouter({

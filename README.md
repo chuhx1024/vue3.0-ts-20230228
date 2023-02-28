@@ -53,6 +53,12 @@ npm run dev
 ### 配置路由
 
 
+### vite 配置
+- 项目配置别名 @
+    - 因为用到 node 的 path 模块 
+    - 所以需要安装 yarn add @types/node -D
+
+
 
 
 
