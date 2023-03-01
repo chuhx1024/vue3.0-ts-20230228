@@ -58,6 +58,50 @@ npm run dev
     - 因为用到 node 的 path 模块 
     - 所以需要安装 yarn add @types/node -D
 
+### 添加 eslint 约束
+
+- 修改 package.json
+```js
+"devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.2.0",
+    "vite-plugin-eslint": "^1.7.0"
+}
+```
+- 添加 .eslintrc.cjs
+```js
+module.exports = {
+    env: {
+        browser: true,
+        es2021: true
+    },
+    extends: [
+        'plugin:vue/vue3-essential',
+        'standard'
+    ],
+    parserOptions: {
+        ecmaVersion: 'latest',
+        parser: '@typescript-eslint/parser',
+        sourceType: 'module'
+    },
+    plugins: [
+        'vue',
+        '@typescript-eslint'
+    ],
+    rules: {
+        indent: [2, 4], // js 4个空格缩进
+        'vue/html-indent': [2, 4], // html 4个空格缩进
+        'vue/multi-word-component-names': 0
+    }
+}
+```
+
 
 
 
