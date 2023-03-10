@@ -32,12 +32,12 @@ const ruleFormRef = ref<FormInstance>()
 
 const ruleForm = reactive({
     userName: 'admin',
-    passWord: '123'
+    passWord: '123',
 })
 
 const rules = reactive({
     userName: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-    passWord: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+    passWord: [{ required: true, message: '请输入密码', trigger: 'blur' }],
 })
 
 const submitForm = (formEl: FormInstance | undefined) => {
@@ -60,7 +60,8 @@ const edit = () => {
 
 <style lang='less' scoped>
     .clu-login-container {
-        color: #fff;
+
+                 color: #fff;
         height: 100vh;
         display: flex;
         flex-direction: column;
