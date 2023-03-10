@@ -5,17 +5,16 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { resolve } from 'path'
 
-
 // 路径查找
 const pathResolve = (dir: string): string => {
     return resolve(__dirname, '.', dir)
 }
 
-const pathSrc = resolve(__dirname, 'src')
+// const pathSrc = resolve(__dirname, 'src')
 
 // 设置别名
 const alias: Record<string, string> = {
-    '@': pathResolve('src')
+    '@': pathResolve('src'),
 }
 
 // https://vitejs.dev/config/
@@ -31,6 +30,6 @@ export default defineConfig({
         }),
     ],
     resolve: {
-        alias
-    }
+        alias,
+    },
 })

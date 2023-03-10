@@ -27,6 +27,7 @@
 <script lang='ts' setup>
 import { reactive, ref } from 'vue'
 import type { FormInstance } from 'element-plus'
+import { login } from '@/api/login'
 
 const ruleFormRef = ref<FormInstance>()
 
@@ -42,10 +43,10 @@ const rules = reactive({
 
 const submitForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return
-    formEl.validate((valid) => {
+    formEl.validate(async (valid) => {
         if (valid) {
-            alert(JSON.stringify(ruleForm))
-            console.log('submit!')
+            const data = await login(ruleForm)
+            console.log(data)
         } else {
             console.log('error submit!')
             return false
